@@ -2,7 +2,10 @@
   "name": "cookiebundle",
   "version": "1.0.0",
   "description": "Module to manipulate browser cookies",
-  "main": "app.js",
+  "main": "./app.js",
+  "bin": {
+    "cookiebundle": "./bin/cookie.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
