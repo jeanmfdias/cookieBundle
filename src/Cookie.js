@@ -4,41 +4,55 @@
  * @param {Any} value 
  * @param {Integer} days 
  */
-function create(name, value, days = '1') {
+exports.create = function (name, value, days = '1') {
     var date = new Date();
     var expires = "";
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     expires = ";expires=" + date.toGMTString();
-    document.cookie = name + "=" + value + expires + "; path=/";
-    return true;
-}
+    try {
+        document.cookie = name + "=" + value + expires + "; path=/";
+        return true;
+    } catch (e) {
+        console.log(e);
+    }
+    return false;
+};
 
 /**
  * Method to get cookie
  * @param {String} name
  */
-function get(name) {
-    var cookies = document.cookie;
-    name = " " + name + "=";
-    if (cookies.indexOf(name) == -1) {
-        return false;
+exports.get = function (name) {
+    try {
+        var cookies = document.cookie;
+        name = " " + name + "=";
+        if (cookies.indexOf(name) == -1) {
+            return false;
+        }
+        cookies = cookies.substr(cookies.indexOf(name), cookies.length);
+        if (cookies.indexOf(';') != -1) {
+            cookies = cookies.substr(0, cookies.indexOf(';'));
+        }
+        cookies = cookies.split('=')[1];
+        return decodeURI(cookies);
+    } catch (e) {
+        console.log(e);
     }
-    cookies = cookies.substr(cookies.indexOf(name), cookies.length);
-    if (cookies.indexOf(';') != -1) {
-        cookies = cookies.substr(0, cookies.indexOf(';'));
-    }
-    cookies = cookies.split('=')[1];
-    return decodeURI(cookies);
-}
+    return false;
+};
 
 /**
  * Method to destroy cookie
  * @param {String} name 
  */
-function destroy(name) {
+exports.destroy = function (name) {
     var date = new Date(2010,1,1);
     date = date.toGMTString();
-    document.cookie = name + "=;expires=" + date + ';path=/';
-}
-
-export { createCookie, getCookie, destroyCookie };
+    try {
+        document.cookie = name + "=;expires=" + date + ';path=/';
+        return true;
+    } catch (e) {
+        console.log(e)
+    }
+    return false;
+};
