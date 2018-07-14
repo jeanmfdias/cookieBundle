@@ -5,8 +5,8 @@
  * @param {Integer} days 
  */
 exports.create = function (name, value, days = '1') {
-    var date = new Date();
-    var expires = "";
+    let date = new Date();
+    let expires = "";
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     expires = ";expires=" + date.toGMTString();
     try {
@@ -24,7 +24,7 @@ exports.create = function (name, value, days = '1') {
  */
 exports.get = function (name) {
     try {
-        var cookies = document.cookie;
+        let cookies = document.cookie;
         name = " " + name + "=";
         if (cookies.indexOf(name) == -1) {
             return false;
@@ -46,7 +46,7 @@ exports.get = function (name) {
  * @param {String} name 
  */
 exports.destroy = function (name) {
-    var date = new Date(2010,1,1);
+    let date = new Date(2010,1,1);
     date = date.toGMTString();
     try {
         document.cookie = name + "=;expires=" + date + ';path=/';

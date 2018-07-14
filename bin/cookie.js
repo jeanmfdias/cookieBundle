@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-var Cookie = require('../src/Cookie.js');
+var { create, get, destroy } = require('../src/Cookie.js');
 
-exports.Cookie = Cookie;
+exports.Cookie = { create, get, destroy };

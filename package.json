@@ -1,13 +1,13 @@
 {
   "name": "cookiebundle",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Module to manipulate browser cookies",
   "main": "./app.js",
   "bin": {
     "cookiebundle": "./bin/cookie.js"
   },
   "scripts": {
-    "test": "node test/test.js"
+    
   },
   "repository": {
     "type": "git",
