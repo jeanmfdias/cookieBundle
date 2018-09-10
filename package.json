@@ -1,6 +1,6 @@
 {
   "name": "cookiebundle",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Module to manipulate browser cookies",
   "main": "./app.js",
   "bin": {
