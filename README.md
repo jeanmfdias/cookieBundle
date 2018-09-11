@@ -4,7 +4,9 @@ This package just work in browser
 
 ## How to install
 
-`npm install cookiebundle`
+```shell
+npm install cookiebundle
+```
 
 ## How to Use
 
