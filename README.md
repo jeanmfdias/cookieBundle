@@ -10,17 +10,25 @@ This package just work in browser
 
 - Import
 
-`const { Cookie } = require('cookiebundle/bin/cookie');`
+```javascript
+const { Cookie } = require('cookiebundle/bin/cookie');
+```
 
 - Create a cookie
 
-`Cookie.create('name', 'value', 1);`
+```javascript
+Cookie.create('name', 'value', 1);
+```
 
 - Retrieve a cookie
 
-`Cookie.get('name');`
+```javascript
+Cookie.get('name');
+```
 
 - Delete a cookie
 
-`Cookie.destroy('name');`
+```javascript
+Cookie.destroy('name');
+```
 
